@@ -1,0 +1,50 @@
+CREATE TABLE Name_of_the_unit (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    Name varchar(20)NOT NULL
+);
+CREATE TABLE Phone_number (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    Number INT(20)NOT NULL
+);
+CREATE TABLE ID_of_good (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    ID INT(20)NOT NULL
+);
+CREATE TABLE Name_of_good (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    Name varchar(20)NOT NULL
+);
+CREATE TABLE Quanity (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    Quanity INT(20)NOT NULL
+);
+CREATE TABLE Prise (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    Prise INT(20)NOT NULL
+);
+CREATE TABLE Data_of_arrival (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    Date_of Date NOT NULL
+);
+CREATE TABLE Provider (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    Provider varchar(20)NOT NULL
+);
+CREATE TABLE Homevork(
+    Name_of_the_unit_id INT,
+    FOREIGN KEY (Name_of_unit_id) REFERENCES Name_of_unit(id),
+    Phone_number_id INT,
+    FOREIGN KEY (Phone_number_id) REFERENCES Phone_number(id),
+    ID_of_good_id INT,
+    FOREIGN KEY (ID_of_good_id) REFERENCES ID_of_good(id),
+    Name_of_good_id INT,
+    FOREIGN KEY (Name_of_good_id) REFERENCES Nane_of_good(id),
+    Quanity_id INT,
+    FOREIGN KEY (Quanity_id) REFERENCES Quanity(id),
+    Prise_id INT,
+    FOREIGN KEY (Prise_id) REFERENCES Prise(id),
+    Date_of_arrival_id INT,
+    FOREIGN KEY (Date_of_arrival_id) REFERENCES Date_of_arrival(id),
+    Provider_id INT,
+    FOREIGN KEY (Provider_id) REFERENCES Provider(id)
+    );
